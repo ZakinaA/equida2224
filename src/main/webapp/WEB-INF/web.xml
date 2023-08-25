@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    
+   
+    <listener>
+        <listener-class>Database.InitConnexion</listener-class>
+    </listener>
+  
+    
+    <servlet>
+        <servlet-name>ServletClient</servlet-name>
+        <servlet-class>servlet.ServletClient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletVente</servlet-name>
+        <servlet-class>servlet.ServletVente</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ServletClient</servlet-name>
+        <url-pattern>/ServletClient/listerLesClientsParCategVente</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ServletVente</servlet-name>
+        <url-pattern>/ServletVente/listerLesVentes</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>ServletClient</servlet-name>
+        <url-pattern>/ServletClient/ajouterClient</url-pattern>
+    </servlet-mapping>
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
